@@ -1,3 +1,7 @@
+var dotenv = require('dotenv');
+dotenv.config();
+var url = process.env.MONGO_URI;
+var api_key = process.env.MY_API_KEY;
 const port = process.env.PORT || 3000;
 const express = require('express');
 var cors = require('cors');
@@ -6,10 +10,6 @@ const mongoose = require('mongoose');
 const fetch = require('node-fetch');
 var myHeaders = new fetch.Headers();
 const Currencies = require('./schema.js');
-var dotenv = require('dotenv');
-dotenv.config();
-var url = process.env.MONGO_URI;
-var api_key = process.env.MY_API_KEY;
 
 mongoose.connect(url,
   {
