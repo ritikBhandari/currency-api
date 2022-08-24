@@ -1,4 +1,4 @@
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const express = require('express');
 var cors = require('cors');
 const app = express();
@@ -58,12 +58,15 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res)=>{
-    // 
-    res.send('hello world')
+    res.send('Hello World! This is Currency Info App. Checkout the /latest route to check the latest prices!');
+})
+
+app.get('/latest', (req, res)=>{
+    Currencies.findOne().sort({'_id': -1}).limit(1).then(content=>res.json(content));
 })
 
 app.listen(port, ()=>{
     console.log('Listening!')
-    // exampleFunction;
-    // setInterval(exampleFunction, 3600000);
+    exampleFunction;
+    setInterval(exampleFunction, 3600000);
 })
