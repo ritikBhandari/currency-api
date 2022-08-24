@@ -1,6 +1,4 @@
-var dotenv = require('dotenv');
-dotenv.config();
-var url = process.env.MONGO_URI;
+require('dotenv').config();
 var api_key = process.env.MY_API_KEY;
 const port = process.env.PORT || 3000;
 const express = require('express');
@@ -11,7 +9,7 @@ const fetch = require('node-fetch');
 var myHeaders = new fetch.Headers();
 const Currencies = require('./schema.js');
 
-mongoose.connect(url,
+mongoose.connect(process.env.MONGO_URL,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -68,6 +66,8 @@ app.get('/latest', (req, res)=>{
 
 app.listen(port, ()=>{
     console.log('Listening!')
+    console.log(url);
     exampleFunction;
     setInterval(exampleFunction, 3600000);
+
 })
