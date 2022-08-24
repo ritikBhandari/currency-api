@@ -7,7 +7,7 @@ const fetch = require('node-fetch');
 var myHeaders = new fetch.Headers();
 const Currencies = require('./schema.js');
 var dotenv = require('dotenv');
-dev.config();
+dotenv.config();
 var url = process.env.MONGO_URI;
 var api_key = process.env.MY_API_KEY;
 
