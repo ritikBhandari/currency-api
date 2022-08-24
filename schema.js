@@ -6,7 +6,8 @@ const currencySchema = new mongoose.Schema({
     jpy: Number,
     usd: Number,
     aud: Number,
-    cad: Number
+    cad: Number,
+    time: Number,
 })
 
 let Currencies = mongoose.model("Currencies", currencySchema, 'myCollection');

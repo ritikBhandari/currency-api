@@ -42,6 +42,7 @@ function exampleFunction(){
             usd: result.rates['USD'],
             aud: result.rates['AUD'],
             cad: result.rates['CAD'],
+            time: Date.now()
     })
         currency.save(function(err){
             if(err){
