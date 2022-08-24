@@ -1,6 +1,5 @@
-require('dotenv').config({path: "./.env"});
+require('dotenv').config();
 var api_key = process.env.MY_API_KEY;
-const port = process.env.PORT || 3000;
 const express = require('express');
 var cors = require('cors');
 const app = express();
@@ -9,7 +8,7 @@ const fetch = require('node-fetch');
 var myHeaders = new fetch.Headers();
 const Currencies = require('./schema.js');
 
-mongoose.connect(process.env.MONGO_URL,
+mongoose.connect('mongodb+srv://ritikbhandari:3ZRfstFI59l4bI9q@cluster1.0s19j.mongodb.net/myDB?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
