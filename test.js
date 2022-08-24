@@ -66,7 +66,6 @@ app.get('/latest', (req, res)=>{
 
 app.listen(port, ()=>{
     console.log('Listening!')
-    console.log(url);
     exampleFunction;
     setInterval(exampleFunction, 3600000);
 
