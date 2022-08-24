@@ -1,5 +1,3 @@
-require('dotenv').config();
-var api_key = process.env.MY_API_KEY;
 const port = process.env.PORT || 3000;
 const express = require('express');
 var cors = require('cors');
@@ -22,7 +20,7 @@ db.once("open", ()=>{
     console.log("Connected successfully!")
 })
 
-myHeaders.append("apikey", api_key);
+myHeaders.append("apikey", "ylRH8tpzzPWP0gjJeqoFuKxa7UO0lHIr");
 
 var requestOptions = {
     method: 'GET',
