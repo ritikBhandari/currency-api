@@ -6,11 +6,12 @@ const mongoose = require('mongoose');
 const fetch = require('node-fetch');
 var myHeaders = new fetch.Headers();
 const Currencies = require('./schema.js');
+var dotenv = require('dotenv');
+dev.config();
+var url = process.env.MONGO_URI;
+var api_key = process.env.MY_API_KEY;
 
-
-const { response } = require('express');
-
-mongoose.connect("mongodb+srv://ritikbhandari:3ZRfstFI59l4bI9q@cluster1.0s19j.mongodb.net/myDB?retryWrites=true&w=majority",
+mongoose.connect(url,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -23,7 +24,7 @@ db.once("open", ()=>{
     console.log("Connected successfully!")
 })
 
-myHeaders.append("apikey", "ylRH8tpzzPWP0gjJeqoFuKxa7UO0lHIr");
+myHeaders.append("apikey", api_key);
 
 var requestOptions = {
     method: 'GET',
