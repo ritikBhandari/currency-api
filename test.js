@@ -6,8 +6,10 @@ const mongoose = require('mongoose');
 const fetch = require('node-fetch');
 var myHeaders = new fetch.Headers();
 const Currencies = require('./schema.js');
+const MONGO_URI = '';
+const API_KEY = '';
 
-mongoose.connect('mongodb+srv://ritikbhandari:3ZRfstFI59l4bI9q@cluster1.0s19j.mongodb.net/myDB?retryWrites=true&w=majority',
+mongoose.connect(MONGO_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -20,7 +22,7 @@ db.once("open", ()=>{
     console.log("Connected successfully!")
 })
 
-myHeaders.append("apikey", "ylRH8tpzzPWP0gjJeqoFuKxa7UO0lHIr");
+myHeaders.append("apikey", API_KEY);
 
 var requestOptions = {
     method: 'GET',
